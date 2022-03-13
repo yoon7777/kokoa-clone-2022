@@ -1,0 +1,128 @@
+css지식
+
+css cascading style sheet
+코드의 순서가 영향을 미친다.
+css는 마지막 코드에 적용된것이 브라우저에 최종 적용된다.
+
+※ 인라인요소 특징
+1) width와 height값을 지정할 수 없다.
+2) width와 height는 contents만큼만 차지한다.
+3) 옆에 다른 요소가 따라 붙는다.
+4) padding은 적용되지만 margin은 좌우에만 적용이 된다.
+
+※ 블록요소 특징
+1) 블록요소는 한줄을 다 차지한다. 즉, 그 옆에 아무것도 오지 않는다.
+2) 높이와 너비값을 지정할 수 있다.
+3) margin, border, padding값을 갖는다.
+
+※ html
+html은 브라우저 전체 영역을 차지한다.
+
+※ body
+1) body는 그 안에 있는 contents사이즈 만큼의 영역을 차지한다.
+2) 항상 8px정도의 margin을 가지고 있다.
+
+※ display
+1) inline-block 단점.
+- 여백이 생긴다.
+- 정해진 형식이 없어서 여백이 바뀐다.
+- 깔끔하지 않다.
+- 반응형을 지원하지 않는다.
+
+
+※ flexbox
+1) flex container는 flexbox의 부모요소로 주축(수평축)과 교차축(수직축)을 갖는다.
+
+2) 자식이 아닌 부모(flex container)를 display:flex로 만든다.
+
+3) justify-content는 주축(수평축)에 적용된다.
+
+4) align-items는 교차축(수직축)에 적용된다.
+
+5) flex-direction은 contents의 방향을 바꿔준다.  
+
+6) flex-wrap은 요소의 너비값에 따라 
+nowrap은 요소의 너비값을 무시하고, 
+wrap은 요소의 너비값을 반영한다.
+
+
+※ position
+레이아웃보다는 위치를 바꾸고 싶을 때 주로 사용한다.
+
+1) position: fixed; 는 box가 위치한 자리에서 위치가 고정되어있다.
+
+
+2) position: fixed에서 top, left, right, bottom값을 주면
+box위치의 기준이 브라우저가 된다. 
+어떠한 요소보다 상단에 위치하게 된다.
+
+3) position: relative;는 그 자리에서 위치를 바꿀때 사용한다.
+top, left, right, bottom를 사용하여 위치를 바꾼다.
+
+4) position: absolute; 는 브라우저를 기준으로 위치가 바뀐다.
+
+5) 기준으로 두고싶은 가장 가까운 부모요소에 position:relative;
+를 하고 자식요소를 positon: absolute;로 하여 기준이 되는 부모 box에서 
+자식 box를 위치하게 할 수 있다. 
+
+※ pseudo selectors
+1) first-child : 첫번째 요소 선택
+2) last-child : 마지막 요소 선택
+3) nth-child(even) : 짝수번째 요소 선택
+4) nth-child(odd) : 홀수번째 요소 선택
+5) nth-child(2n+1) : 홀수번째 요소 선택(1,3,5...)
+6) nth-child(3n+1) : 1, 4, 7...
+7) p span or p > span : p안에 자식 span 선택
+8) p + span : p의 바로 뒤에오는 형제요소 span 선택
+9) p ~ span : p의 형제요소 span선택
+10) input : required - 속성이 required인 요소 선택
+11) input:[type="text"] - type이 text인 요소 선택
+12 input:[placeholder~="name"] - placeholder에 "name"을 포함한 모든 input 선택.
+
+
+※ 반응형 Media Queries
+portrait모드 - 세로모드
+landscape모드 - 가로모드
+
+사용법
+최대 너비가 400px
+@media screen and (max-width: 400px) {
+      div {
+               background-color: #eee
+       } 
+ }
+
+300px~600px사이
+@media screen and (min-width: 300px) and (max-width: 600px) {
+      div {
+               background-color: #eee
+       } 
+ }
+
+
+@media screen and (min-width: 300px) and (max-width: 600px) and (orientation: ladnscape) {
+      div {
+               background-color: #eee
+       } 
+ }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
